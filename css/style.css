@@ -96,6 +96,10 @@ body {
   grid-column: 2;
 }
 
+.animais-lista li{
+  cursor: pointer;
+}
+
 .animais-lista::-webkit-scrollbar {
   width: 18px;
 }
@@ -211,5 +215,33 @@ body {
 
   .copy{
     margin-bottom: 0px;
+  }
+}
+
+.js .js-tabconteudo section{
+  display: none;
+}
+
+.js-tabconteudo section.ativo {
+  display: block !important;
+  /* Chamando a função show dentro de animation, a animação vai durar 0,5 segundos, e a propriedade 'forward' define que o elemento manterá as mesmas propriedades após a animação, ou seja, ele ficará na posição definida em 'to'. */
+  animation: show .5s forwards;
+}
+
+/* Animação com css*/
+@keyframes show{
+  /* Saia de... */
+  from{
+    /* Opacidade 0 e -30px à esquerda */
+    opacity: 0;
+    /* A função translate3d modifica em três eixos, então a posição inicial do conteúdo é de -30px à esquerda */
+    transform: translate3d(-30px, 0, 0);
+  }
+
+  /* E vai para...*/
+  to{
+    /* Opacidade 1 e posição normal */
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
